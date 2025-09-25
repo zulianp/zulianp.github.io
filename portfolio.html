@@ -82,6 +82,38 @@
             </div>
           </article>
           <article class="portfolio-card">
+            <h3>Data-centric workloads with MPI_Sort</h3>
+            <div class="portfolio-card__gallery">
+              <figure class="portfolio-card__figure">
+                <img src="portfolio/20240423_sort/figures/Throughput.png" alt="Data-centric workloads with MPI_Sort">
+
+              </figure>
+              <figure class="portfolio-card__figure">
+                <img src="portfolio/20240423_sort/figures/Throughput_2.png" alt="Throughput of parallel sorting [GB/s]">
+                <figcaption>Throughput of parallel sorting [GB/s]</figcaption>
+              </figure>
+            </div>
+            <details class="portfolio-card__details">
+              <summary class="portfolio-card__summary">Project overview</summary>
+              <div class="portfolio-card__description">
+<p>Sorting is a fundamental task in computing and plays a central role in information technology. The advent of rack-scale and warehouse-size data processing shaped the architecture of data analysis platforms towards supercomputing. In turn, established techniques on supercomputers have become relevant to a wider range of application domains. This work is concerned with multi-way mergesort with exact splitting on distributed memory architectures. At its core, our approach leverages a novel and parallel algorithm for multi-way selection problems. Remarkably concise, the algorithm relies on MPI_Allgather and MPI_ReduceScatter_block, two collective communication schemes that find hardware support in most high-end networks. A software implementation of our approach is used to process the Terabyte-size Data Challenge 2 signal, released by the SKA radio telescopes organization. On the supercomputer considered herein, our approach outperforms the state of the art by up to 2.6X using 9,216 cores. Our implementation is released as a compact open source library compliant to the MPI programming model. By supporting the most popular elementary key types, and arbitrary fixed-size value types, the library can be straightforwardly integrated into third-party MPI-based software.</p>
+              </div>
+            </details>
+            <div class="portfolio-card__links">
+<a class="button button--doc" href="https://doi.org/10.1016/j.jpdc.2023.104833" target="_blank" rel="noopener">
+                  <span class="button__icon" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" role="img" focusable="false">
+                      <path d="M9 3h11l7 7v15a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                      <path d="M20 3v8h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                      <rect x="9" y="19" width="14" height="8" rx="1.6" fill="currentColor"/>
+                      <text x="16" y="25" text-anchor="middle" font-family="Inter, 'Segoe UI', sans-serif" font-size="7" font-weight="700" fill="#ffffff">PDF</text>
+                    </svg>
+                  </span>
+                  <span class="button__label">Read Paper</span>
+                </a>
+            </div>
+          </article>
+          <article class="portfolio-card">
             <h3>A Parallel Approach to the Variational Transfer of Discrete Fields between Arbitrarily Distributed Unstructured Finite Element Meshes</h3>
             <div class="portfolio-card__gallery">
               <figure class="portfolio-card__figure">
