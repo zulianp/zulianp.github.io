@@ -1,4 +1,4 @@
-title: An Immersed Domain Nethod for Fluid-Structure Interaction with Contact
+title: An Immersed Domain Method for Fluid-Structure Interaction with Contact
 description: "
 We present an immersed domain approach for the numerical solution of contact problems between multiple elastic structures immersed in a fluid flow.
 We simulate the full dynamics of a bio-prosthetic heart valve. We model the blood-valve interaction, the blood-aortic wall interaction, and the contact among leaflets during the valve closure.
@@ -11,5 +11,5 @@ images:
   - src: figures/FSCI.png
     caption: "(A) Bio-prosthetic valve in the aortic root (cut for visualization). (B) Fluid domain. (D) Velocity profile imposed at the inlet of the fluid domain and pressure profile (E) computed at the outlet with the Windkessel model."
 paper: 
-  - status: "Accepted"
-  # - url: 
+  - status: "DD28 Proceeding (Accepted)"
+

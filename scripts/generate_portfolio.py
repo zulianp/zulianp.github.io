@@ -303,11 +303,10 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
       </div>
     </nav>
     <div class=\"hero__content\">
-      <p class=\"hero__eyebrow\">Project Highlights</p>
-      <h1>Portfolio</h1>
+      <p class=\"hero__eyebrow\">Scientific work</p>
+      <!--<h1>Portfolio</h1>-->
       <p class=\"hero__lede\">
-        Selected research software, numerical methods, and community initiatives that showcase how variational
-        transfer, fluid-structure interaction, and large-scale geophysics simulations translate into real-world impact.
+        Projects, articles, and open-source software.
       </p>
     </div>
   </header>
@@ -315,7 +314,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   <main>
     <section class=\"section\" id=\"portfolio\">
       <div class=\"section__inner\">
-        <h2>Featured Work</h2>
+       <!--<h2>Featured Work</h2>-->
         <div class=\"portfolio-grid\">
 {{CARDS}}
         </div>
@@ -324,7 +323,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   </main>
 
   <footer class=\"footer\">
-    <p>© <span id=\"year\"></span> Patrick Zulian. Built with care for GitHub Pages.</p>
+    <p>© <span id=\"year\"></span> Patrick Zulian</p>
   </footer>
 
   <script>
@@ -357,9 +356,12 @@ FIGURE_TEMPLATE = """              <figure class=\"portfolio-card__figure\">
 FIGURE_CAPTION_TEMPLATE = """                <figcaption>{{TEXT}}</figcaption>"""
 
 
-DESCRIPTION_TEMPLATE = """            <div class=\"portfolio-card__description\">
+DESCRIPTION_TEMPLATE = """            <details class=\"portfolio-card__details\">
+              <summary class=\"portfolio-card__summary\">Description</summary>
+              <div class=\"portfolio-card__description\">
 {{CONTENT}}
-            </div>"""
+              </div>
+            </details>"""
 
 
 LINKS_TEMPLATE = """            <div class=\"portfolio-card__links\">

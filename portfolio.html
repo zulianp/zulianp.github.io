@@ -24,12 +24,10 @@
       </div>
     </nav>
     <div class="hero__content">
-      <p class="hero__eyebrow">Project Highlights</p>
-      <h1>Portfolio</h1>
+      <p class="hero__eyebrow">Scientific work</p>
+      <!--<h1>Portfolio</h1>-->
       <p class="hero__lede">
-        Selected research software, numerical methods, and community initiatives that showcase how variational
-        transfer, fluid-structure interaction, and large-scale geophysics simulations translate into real-world
-        impact.
+        Projects, articles, and open-source software.
       </p>
     </div>
   </header>
@@ -37,62 +35,73 @@
   <main>
     <section class="section" id="portfolio">
       <div class="section__inner">
-        <h2>Featured Work</h2>
+       <!--<h2>Featured Work</h2>-->
         <div class="portfolio-grid">
           <article class="portfolio-card">
-            <div class="portfolio-card__info">
-              <h3>Variational Transfer Toolkit</h3>
-              <p>Parallel variational resampling methods for exchanging discrete fields between unrelated meshes, enabling robust multiphysics coupling across scales.</p>
-              <div class="portfolio-card__links">
-                <a class="button button--doc" href="https://www.researchgate.net/publication/304670909_A_Parallel_Approach_to_the_Variational_Transfer_of_Discrete_Fields_between_Arbitrarily_Distributed_Unstructured_Finite_Element_Meshes" target="_blank" rel="noopener">
-                  <span class="button__icon" aria-hidden="true">
-                    <svg viewBox="0 0 32 32" role="img" focusable="false">
-                      <path d="M9 3h11l7 7v15a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                      <path d="M20 3v8h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                      <rect x="9" y="19" width="14" height="8" rx="1.6" fill="currentColor"/>
-                      <text x="16" y="25" text-anchor="middle" font-family="Inter, 'Segoe UI', sans-serif" font-size="7" font-weight="700" fill="#ffffff">PDF</text>
-                    </svg>
-                  </span>
-                  <span class="button__label">Read Paper</span>
-                </a>
-                <a class="button button--ghost" href="https://www.youtube.com/watch?v=YaES6TADbF4" target="_blank" rel="noopener">Watch Talk</a>
-              </div>
+            <h3>Shifted-Penalty Multigrid Method for Contact</h3>
+            <div class="portfolio-card__gallery">
+              <figure class="portfolio-card__figure">
+                <img src="portfolio/20251231_spmg/figures/StentDesign.png" alt="Idealized stent (rigid). 1D beam to extruded surface using signed-distance fields.">
+                <figcaption>Idealized stent (rigid). 1D beam to extruded surface using signed-distance fields.</figcaption>
+              </figure>
+              <figure class="portfolio-card__figure">
+                <img src="portfolio/20251231_spmg/figures/StentExample.png" alt="Contact between elastic structure and rigid stent simulated on an Apple M1 Max. Mesh: 87808000 elements and 89439840 nodes.">
+                <figcaption>Contact between elastic structure and rigid stent simulated on an Apple M1 Max. Mesh: 87808000 elements and 89439840 nodes.</figcaption>
+              </figure>
             </div>
-            <div class="portfolio-card__media">
-              <img class="portfolio-card__image" src="sources/Patrick_Zulian_s_CV/figures/Transfer.png" alt="Visualization of variational transfer between two meshes">
+            <details class="portfolio-card__details">
+              <summary class="portfolio-card__summary">Description</summary>
+              <div class="portfolio-card__description">
+<p>High-performance computing plays an important role in solving large-scale contact problems. The ability to simulate such phenomena at an engineering scale within a desired time frame is often hindered by the availability of computational resources or limited by computing budgets. Hence, it is vital to design efficient algorithms and software capable of exploiting the available and contemporary computational hardware, such as multi-core CPUs and GPUs. Iterative solvers and preconditioning techniques are essential ingredients for realizing such performance goals. In fact, on the one hand, Monotone Multigrid (MMG) methods provide a robust baseline for solution strategies with optimal complexity. On the other hand, Penalty and Augmented Lagrangian methods offer the flexibility to conveniently address over-constrained problems even in the presence of fuzzy constraints. One example is the Shifted-penalty method for contact. This method satisfies the constraints with high accuracy and is competitive against non-smooth solution techniques such as the semi-smooth Newton method.</p>
+<p>With the goal of achieving the optimal runtime complexity of MMG and the high flexibility of shifted-penalty methods, we introduce the Shifted-Penalty Multigrid (SPMG) method for Contact. Furthermore, we design the algorithm to efficiently exploit GPUs. To this end, our approach leverages matrix-free differential operators and memory-efficient semi-structured meshes for discretizing the elasticity equations.</p>
+              </div>
+            </details>
+            <div class="portfolio-card__links">
+<span class="badge badge--status">Article in preparation</span>
             </div>
           </article>
-
           <article class="portfolio-card">
-            <div class="portfolio-card__info">
-              <h3>Immersed FSI Framework</h3>
-              <p>Coupled finite element and high-order finite difference solvers that capture complex fluid-structure-contact interaction with immersed hyper-elastic solids.</p>
-              <div class="portfolio-card__links">
-                <a class="button button--doc" href="https://www.sciencedirect.com/science/article/pii/S0021999119305820" target="_blank" rel="noopener">
-                  <span class="button__icon" aria-hidden="true">
-                    <svg viewBox="0 0 32 32" role="img" focusable="false">
-                      <path d="M9 3h11l7 7v15a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                      <path d="M20 3v8h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                      <rect x="9" y="19" width="14" height="8" rx="1.6" fill="currentColor"/>
-                      <text x="16" y="25" text-anchor="middle" font-family="Inter, 'Segoe UI', sans-serif" font-size="7" font-weight="700" fill="#ffffff">PDF</text>
-                    </svg>
-                  </span>
-                  <span class="button__label">Read Paper</span>
-                </a>
-                <a class="button button--ghost" href="https://www.youtube.com/watch?v=Hx1vgGC0HSM" target="_blank" rel="noopener">Watch Demo</a>
-              </div>
+            <h3>An Immersed Domain Method for Fluid-Structure Interaction with Contact</h3>
+            <div class="portfolio-card__gallery">
+              <figure class="portfolio-card__figure">
+                <img src="portfolio/20251215_dd28/figures/Settings.png" alt="(A) Geometric setting of the momentum conservation benchmark. (B) Snapshots of the trajectory of the circle at different time steps. (C) Displacement of the barycenter of the circle in the x and y direction.">
+                <figcaption>(A) Geometric setting of the momentum conservation benchmark. (B) Snapshots of the trajectory of the circle at different time steps. (C) Displacement of the barycenter of the circle in the x and y direction.</figcaption>
+              </figure>
+              <figure class="portfolio-card__figure">
+                <img src="portfolio/20251215_dd28/figures/FSCI.png" alt="(A) Bio-prosthetic valve in the aortic root (cut for visualization). (B) Fluid domain. (D) Velocity profile imposed at the inlet of the fluid domain and pressure profile (E) computed at the outlet with the Windkessel model.">
+                <figcaption>(A) Bio-prosthetic valve in the aortic root (cut for visualization). (B) Fluid domain. (D) Velocity profile imposed at the inlet of the fluid domain and pressure profile (E) computed at the outlet with the Windkessel model.</figcaption>
+              </figure>
             </div>
-            <div class="portfolio-card__media">
-              <img class="portfolio-card__image" src="sources/Patrick_Zulian_s_CV/figures/FSI.png" alt="Fluid-structure interaction simulation with immersed bodies">
+            <details class="portfolio-card__details">
+              <summary class="portfolio-card__summary">Description</summary>
+              <div class="portfolio-card__description">
+<p>We present an immersed domain approach for the numerical solution of contact problems between multiple elastic structures immersed in a fluid flow. We simulate the full dynamics of a bio-prosthetic heart valve. We model the blood-valve interaction, the blood-aortic wall interaction, and the contact among leaflets during the valve closure. The solid structures are modeled as hyperelastic and anisotropic materials, whereas the fluid is considered Newtonian. The mathematical modeling of such material properties and the contact mechanics give rise to a large-scale nonlinear problem that is both challenging and computationally expensive. We employ a localized version of the L2-projection for handling the fluid-structure volumetric coupling and a variant of the mortar method for coupling the surfaces of the structures in contact. We illustrate one verification test and a fully coupled fluid-structure-contact interaction simulation of a bio-prosthetic heart valve placed in the aortic root.</p>
+              </div>
+            </details>
+            <div class="portfolio-card__links">
+<span class="badge badge--status">DD28 Proceeding (Accepted)</span>
             </div>
           </article>
-
           <article class="portfolio-card">
-            <div class="portfolio-card__info">
-              <h3>Fracture Network Growth</h3>
-              <p>Mixed-dimensional discretizations and software for fractured porous media, supporting geothermal reservoir forecasting and uncertainty analysis.</p>
-              <div class="portfolio-card__links">
-                <a class="button button--doc" href="https://arxiv.org/pdf/2008.06360.pdf" target="_blank" rel="noopener">
+            <h3>A Parallel Approach to the Variational Transfer of Discrete Fields between Arbitrarily Distributed Unstructured Finite Element Meshes</h3>
+            <div class="portfolio-card__gallery">
+              <figure class="portfolio-card__figure">
+                <img src="portfolio/20160601_moonolith/figures/Transfer.png" alt="Parallel surface projection. Colors represent MPI ranks.">
+                <figcaption>Parallel surface projection. Colors represent MPI ranks.</figcaption>
+              </figure>
+              <figure class="portfolio-card__figure">
+                <img src="portfolio/20160601_moonolith/figures/Resampling.png" alt="Left: volumetric resampling. Right: surface resampling.">
+                <figcaption>Left: volumetric resampling. Right: surface resampling.</figcaption>
+              </figure>
+            </div>
+            <details class="portfolio-card__details">
+              <summary class="portfolio-card__summary">Description</summary>
+              <div class="portfolio-card__description">
+<p>An essential ingredient for the discretization and numerical solution of coupled multi-physics or multi-scale problems are stable and efficient techniques for the transfer of discrete f ields between non-matching volume or surface meshes. Here, we present and investigate a new and completely parallel approach. It allows for the transfer of discrete fields between unstructured volume and surface meshes, which can be arbitrarily distributed among different processors. No a priori information on the relation between the different meshes is required. Our inherently parallel approach is general in the sense that it can deal with both classical interpolation and variational transfer operators, e.g., the L2-projection and the pseudo-L2-projection. It includes a parallel search strategy, output dependent load balancing, and the computation of element intersections, as well as the parallel assembling of the algebraic representation of the respective transfer operator. We describe our algorithmic framework and its implementation in the library MOONoLith. Furthermore, we investigate the efficiency and parallel scalability of our new approach using different examples in 3D. This includes the computation of a volume transfer operator between 2 meshes with 2 billion elements in total and the computation of a surface transfer operator between 14 different meshes with 59 billion elements in total. The experiments have been performed with up to 12288 cores.</p>
+              </div>
+            </details>
+            <div class="portfolio-card__links">
+<a class="button button--doc" href="https://doi.org/10.1137/15M1008361" target="_blank" rel="noopener">
                   <span class="button__icon" aria-hidden="true">
                     <svg viewBox="0 0 32 32" role="img" focusable="false">
                       <path d="M9 3h11l7 7v15a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
@@ -103,35 +112,6 @@
                   </span>
                   <span class="button__label">Read Paper</span>
                 </a>
-                <a class="button button--ghost" href="https://www.youtube.com/watch?v=s5Tmn_ANP0o" target="_blank" rel="noopener">Watch Session</a>
-              </div>
-            </div>
-            <div class="portfolio-card__media">
-              <img class="portfolio-card__image" src="sources/Patrick_Zulian_s_CV/figures/DFN.png" alt="Fracture network model visualization">
-            </div>
-          </article>
-
-          <article class="portfolio-card">
-            <div class="portfolio-card__info">
-              <h3>Space-Time Multigrid</h3>
-              <p>Tensor-product discretizations and semi-geometric multigrid solvers for 4D finite element simulations with adaptive mesh management.</p>
-              <div class="portfolio-card__links">
-                <a class="button button--doc" href="https://arxiv.org/pdf/1911.06066.pdf" target="_blank" rel="noopener">
-                  <span class="button__icon" aria-hidden="true">
-                    <svg viewBox="0 0 32 32" role="img" focusable="false">
-                      <path d="M9 3h11l7 7v15a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                      <path d="M20 3v8h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                      <rect x="9" y="19" width="14" height="8" rx="1.6" fill="currentColor"/>
-                      <text x="16" y="25" text-anchor="middle" font-family="Inter, 'Segoe UI', sans-serif" font-size="7" font-weight="700" fill="#ffffff">PDF</text>
-                    </svg>
-                  </span>
-                  <span class="button__label">Read Paper</span>
-                </a>
-                <a class="button button--ghost" href="https://www.youtube.com/watch?v=I7pQfwQwjx0" target="_blank" rel="noopener">Watch Overview</a>
-              </div>
-            </div>
-            <div class="portfolio-card__media">
-              <img class="portfolio-card__image" src="sources/Patrick_Zulian_s_CV/figures/STMG.png" alt="Space-time multigrid structure diagram">
             </div>
           </article>
         </div>

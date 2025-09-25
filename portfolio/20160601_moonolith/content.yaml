@@ -4,6 +4,9 @@ An essential ingredient for the discretization and numerical solution of coupled
 images: 
   - src: figures/Transfer.png
     caption: "Parallel surface projection. Colors represent MPI ranks."
+  - src: figures/Resampling.png
+    caption: "Left: volumetric resampling. Right: surface resampling."
 paper: 
-  - status: "Published"
+  - status: "Accepted"
   - url: "https://doi.org/10.1137/15M1008361"
+# video: "https://www.youtube.com/watch?v=YaES6TADbF4"
