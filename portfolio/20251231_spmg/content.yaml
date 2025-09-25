@@ -1,0 +1,17 @@
+title: Shifted-Penalty Multigrid Method for Contact
+description: "High-performance computing plays an important role in solving large-scale contact problems. 
+The ability to simulate such phenomena at an engineering scale within a desired time frame is often hindered by the availability of computational resources or limited by computing budgets. Hence, it is vital to design efficient algorithms and software capable of exploiting the available and contemporary computational hardware, such as multi-core CPUs and GPUs. Iterative solvers and preconditioning techniques are essential ingredients for realizing such performance goals. In fact, on the one hand,
+Monotone Multigrid (MMG) methods provide a robust baseline for solution strategies with optimal complexity. On the other hand,
+Penalty and Augmented Lagrangian methods offer the flexibility to conveniently address over-constrained problems even in the presence of fuzzy constraints.
+One example is the Shifted-penalty method for contact. This method satisfies the constraints with high accuracy and is competitive against non-smooth solution techniques such as the semi-smooth Newton method.
+
+With the goal of achieving the optimal runtime complexity of MMG and the high flexibility of shifted-penalty methods, we introduce the Shifted-Penalty Multigrid (SPMG) method for Contact. Furthermore, we design the algorithm to efficiently exploit GPUs.
+To this end, our approach leverages matrix-free differential operators and memory-efficient semi-structured meshes for discretizing the elasticity equations."
+images: 
+  - src: figures/StentDesign.png
+    caption: "Idealized stent (rigid). 1D beam to extruded surface using signed-distance fields."
+  - src: figures/StentExample.png
+    caption: "Contact between elastic structure and rigid stent simulated on an Apple M1 Max. Mesh: 87808000 elements and 89439840 nodes."
+paper: 
+  - status: "In preparation"
+  # - url: 

@@ -1,0 +1,9 @@
+title: A Parallel Approach to the Variational Transfer of Discrete Fields between Arbitrarily Distributed Unstructured Finite Element Meshes
+description: "
+An essential ingredient for the discretization and numerical solution of coupled multi-physics or multi-scale problems are stable and efficient techniques for the transfer of discrete f ields between non-matching volume or surface meshes. Here, we present and investigate a new and completely parallel approach. It allows for the transfer of discrete fields between unstructured volume and surface meshes, which can be arbitrarily distributed among different processors. No a priori information on the relation between the different meshes is required. Our inherently parallel approach is general in the sense that it can deal with both classical interpolation and variational transfer operators, e.g., the L2-projection and the pseudo-L2-projection. It includes a parallel search strategy, output dependent load balancing, and the computation of element intersections, as well as the parallel assembling of the algebraic representation of the respective transfer operator. We describe our algorithmic framework and its implementation in the library MOONoLith. Furthermore, we investigate the efficiency and parallel scalability of our new approach using different examples in 3D. This includes the computation of a volume transfer operator between 2 meshes with 2 billion elements in total and the computation of a surface transfer operator between 14 different meshes with 59 billion elements in total. The experiments have been performed with up to 12288 cores."
+images: 
+  - src: figures/Transfer.png
+    caption: "Parallel surface projection. Colors represent MPI ranks."
+paper: 
+  - status: "Published"
+  - url: "https://doi.org/10.1137/15M1008361"
