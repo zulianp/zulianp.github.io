@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header class="hero hero--compact">
+  <header class="hero hero--compact" id="top">
     <nav class="nav">
       <a class="nav__brand" href="index.html#top">Patrick Zulian</a>
       <div class="nav__links">
@@ -49,7 +49,7 @@
               </figure>
             </div>
             <details class="portfolio-card__details">
-              <summary class="portfolio-card__summary">Description</summary>
+              <summary class="portfolio-card__summary">Project overview</summary>
               <div class="portfolio-card__description">
 <p>High-performance computing plays an important role in solving large-scale contact problems. The ability to simulate such phenomena at an engineering scale within a desired time frame is often hindered by the availability of computational resources or limited by computing budgets. Hence, it is vital to design efficient algorithms and software capable of exploiting the available and contemporary computational hardware, such as multi-core CPUs and GPUs. Iterative solvers and preconditioning techniques are essential ingredients for realizing such performance goals. In fact, on the one hand, Monotone Multigrid (MMG) methods provide a robust baseline for solution strategies with optimal complexity. On the other hand, Penalty and Augmented Lagrangian methods offer the flexibility to conveniently address over-constrained problems even in the presence of fuzzy constraints. One example is the Shifted-penalty method for contact. This method satisfies the constraints with high accuracy and is competitive against non-smooth solution techniques such as the semi-smooth Newton method.</p>
 <p>With the goal of achieving the optimal runtime complexity of MMG and the high flexibility of shifted-penalty methods, we introduce the Shifted-Penalty Multigrid (SPMG) method for Contact. Furthermore, we design the algorithm to efficiently exploit GPUs. To this end, our approach leverages matrix-free differential operators and memory-efficient semi-structured meshes for discretizing the elasticity equations.</p>
@@ -72,7 +72,7 @@
               </figure>
             </div>
             <details class="portfolio-card__details">
-              <summary class="portfolio-card__summary">Description</summary>
+              <summary class="portfolio-card__summary">Project overview</summary>
               <div class="portfolio-card__description">
 <p>We present an immersed domain approach for the numerical solution of contact problems between multiple elastic structures immersed in a fluid flow. We simulate the full dynamics of a bio-prosthetic heart valve. We model the blood-valve interaction, the blood-aortic wall interaction, and the contact among leaflets during the valve closure. The solid structures are modeled as hyperelastic and anisotropic materials, whereas the fluid is considered Newtonian. The mathematical modeling of such material properties and the contact mechanics give rise to a large-scale nonlinear problem that is both challenging and computationally expensive. We employ a localized version of the L2-projection for handling the fluid-structure volumetric coupling and a variant of the mortar method for coupling the surfaces of the structures in contact. We illustrate one verification test and a fully coupled fluid-structure-contact interaction simulation of a bio-prosthetic heart valve placed in the aortic root.</p>
               </div>
@@ -94,7 +94,7 @@
               </figure>
             </div>
             <details class="portfolio-card__details">
-              <summary class="portfolio-card__summary">Description</summary>
+              <summary class="portfolio-card__summary">Project overview</summary>
               <div class="portfolio-card__description">
 <p>An essential ingredient for the discretization and numerical solution of coupled multi-physics or multi-scale problems are stable and efficient techniques for the transfer of discrete f ields between non-matching volume or surface meshes. Here, we present and investigate a new and completely parallel approach. It allows for the transfer of discrete fields between unstructured volume and surface meshes, which can be arbitrarily distributed among different processors. No a priori information on the relation between the different meshes is required. Our inherently parallel approach is general in the sense that it can deal with both classical interpolation and variational transfer operators, e.g., the L2-projection and the pseudo-L2-projection. It includes a parallel search strategy, output dependent load balancing, and the computation of element intersections, as well as the parallel assembling of the algebraic representation of the respective transfer operator. We describe our algorithmic framework and its implementation in the library MOONoLith. Furthermore, we investigate the efficiency and parallel scalability of our new approach using different examples in 3D. This includes the computation of a volume transfer operator between 2 meshes with 2 billion elements in total and the computation of a surface transfer operator between 14 different meshes with 59 billion elements in total. The experiments have been performed with up to 12288 cores.</p>
               </div>
@@ -121,6 +121,8 @@
   <footer class="footer">
     <p>© <span id="year"></span> Patrick Zulian</p>
   </footer>
+
+  <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();

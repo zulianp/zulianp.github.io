@@ -289,7 +289,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   <link rel=\"stylesheet\" href=\"assets/css/style.css\">
 </head>
 <body>
-  <header class=\"hero hero--compact\">
+  <header class=\"hero hero--compact\" id=\"top\">
     <nav class=\"nav\">
       <a class=\"nav__brand\" href=\"index.html#top\">Patrick Zulian</a>
       <div class=\"nav__links\">
@@ -325,6 +325,8 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     <p>© <span id=\"year\"></span> Patrick Zulian</p>
   </footer>
 
+  <a href=\"#top\" class=\"back-to-top\" aria-label=\"Back to top\">↑</a>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
@@ -356,7 +358,7 @@ FIGURE_CAPTION_TEMPLATE = """                <figcaption>{{TEXT}}</figcaption>""
 
 
 DESCRIPTION_TEMPLATE = """            <details class=\"portfolio-card__details\">
-              <summary class=\"portfolio-card__summary\">Description</summary>
+              <summary class=\"portfolio-card__summary\">Project overview</summary>
               <div class=\"portfolio-card__description\">
 {{CONTENT}}
               </div>
