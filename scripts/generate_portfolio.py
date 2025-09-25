@@ -299,7 +299,6 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
         <a href=\"index.html#projects\">Projects</a>
         <a href=\"index.html#service\">Service</a>
         <a href=\"portfolio.html\" aria-current=\"page\">Portfolio</a>
-        <a href=\"index.html#contact\">Contact</a>
       </div>
     </nav>
     <div class=\"hero__content\">

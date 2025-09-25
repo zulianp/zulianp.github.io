@@ -186,14 +186,40 @@ a:focus {
 
 .hero__meta {
   display: flex;
-  gap: 0.75rem;
+  gap: 1rem;
   flex-wrap: wrap;
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.75);
 }
 
-.hero__meta a {
-  color: rgba(255, 255, 255, 0.85);
+.hero__meta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hero__meta-link:hover,
+.hero__meta-link:focus {
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+}
+
+.hero__meta-link .icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.9;
+}
+
+.button .icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.9;
 }
 
 .section {
