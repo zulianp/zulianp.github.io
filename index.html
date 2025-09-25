@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Patrick Zulian | Computational Scientist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="hero" id="top">
+    <nav class="nav">
+      <a class="nav__brand" href="#top">Patrick Zulian</a>
+      <div class="nav__links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#service">Service</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Computational Scientist & Research Leader</p>
+      <h1>Patrick Zulian, PhD</h1>
+      <p class="hero__lede">
+        Patrick Zulian, is a scientific researcher at the Euler institute, Università della Svizzera italiana (USI), and at FernUNI Switzerland. His work ranges from domain decomposition methods for multi-physics simulations to developing algorithms for large-scale scientific computing. 
+He is the creator and lead developer of several software libraries in collaboration with the Swiss National Computing Center (CSCS) and a contributor to international open-source projects, such as MFEM (Lawrence Livermore National Lab, LLNL). He is the Principal investigator (PI) and co-PI on computational multi-physics projects with a strong focus on algorithms and high-performance computing.
+He received a Ph.D. in computational science from USI in 2017 and has a computer science and software engineering background.
+      </p>
+      <div class="hero__cta">
+        <a class="button" href="#contact">Connect</a>
+        <a class="button button--ghost" href="https://www.linkedin.com/in/zulianp/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="hero__meta">
+        <a href="mailto:patrick.zulian@usi.ch">patrick.zulian@usi.ch</a>
+        <span>·</span>
+        <a href="https://orcid.org/0000-0002-5822-3288" target="_blank" rel="noopener">ORCID 0000-0002-5822-3288</a>
+        <span>·</span>
+        <a href="https://scholar.google.com/citations?user=iHrGaOoAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="about">
+      <div class="section__inner">
+        <h2>About</h2>
+        <div class="split">
+          <div>
+            <p>
+              I develop scalable numerical methods and software for multiphysics simulations, with a focus on
+              fluid-structure interaction, non-conforming mesh techniques, and uncertainty quantification. My work
+              bridges algorithm research with production-level HPC implementations, delivering tools for geophysics,
+              biomedicine, and industrial partners.
+            </p>
+          </div>
+          <div>
+            <h3>Expertise</h3>
+            <ul class="tag-list">
+              <li>Parallel domain decomposition</li>
+              <li>Variational transfer methods</li>
+              <li>Fluid-structure-contact interaction</li>
+              <li>High-performance scientific software</li>
+              <li>Finite element & finite difference schemes</li>
+              <li>Research program leadership</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted" id="research">
+      <div class="section__inner">
+        <h2>Selected Scientific Achievements</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Variational Transfer for Multiphysics</h3>
+            <p>
+              Created parallel variational resampling strategies to transfer discrete fields between non-matching
+              meshes, combining geometric search, load balancing, and operator construction. The software underpins
+              coupled simulations across geophysics and biomedical applications.
+            </p>
+            <a href="https://www.researchgate.net/publication/304670909_A_Parallel_Approach_to_the_Variational_Transfer_of_Discrete_Fields_between_Arbitrarily_Distributed_Unstructured_Finite_Element_Meshes" target="_blank" rel="noopener">Read the paper</a>
+          </article>
+          <article class="card">
+            <h3>Fluid-Structure Interaction Frameworks</h3>
+            <p>
+              Developed complementary FSI frameworks: a finite element and high-order finite difference coupling for
+              fluid and structural physics, and an all-finite-element approach capable of simulating contact between
+              immersed hyper-elastic structures.
+            </p>
+            <a href="https://www.sciencedirect.com/science/article/pii/S0021999119305820" target="_blank" rel="noopener">Framework details</a>
+          </article>
+          <article class="card">
+            <h3>Computational Geophysics Tooling</h3>
+            <p>
+              Advanced mixed-dimensional models for fractured porous media using dual Lagrange multipliers, and
+              released software that drives fracture network simulations for geothermal applications.
+            </p>
+            <a href="https://arxiv.org/pdf/1901.01901.pdf" target="_blank" rel="noopener">Representative work</a>
+          </article>
+          <article class="card">
+            <h3>Space-Time Multilevel Methods</h3>
+            <p>
+              Designed scalable multigrid solvers and adaptive mesh managers for space-time finite element
+              discretizations, enabling efficient 4D simulations with automatic coarse level generation.
+            </p>
+            <a href="https://arxiv.org/pdf/1911.06066.pdf" target="_blank" rel="noopener">Explore the methods</a>
+          </article>
+          <article class="card">
+            <h3>Uncertainty Quantification at Scale</h3>
+            <p>
+              Co-developed hierarchical PDE samplers for multilevel Monte Carlo analyses, generating spatially
+              correlated random fields over general domains to assess model sensitivity and risk.
+            </p>
+            <a href="https://arxiv.org/pdf/1712.06758.pdf" target="_blank" rel="noopener">Learn more</a>
+          </article>
+          <article class="card">
+            <h3>Collaborative Research Networks</h3>
+            <p>
+              Led interdisciplinary collaborations with LLNL, ETH Zürich, University of Bern, University of Turin,
+              HSLU, KNF Flodos AG, and the Swiss National Supercomputing Centre to translate algorithms into
+              production-ready HPC software.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="section__inner">
+        <h2>Experience</h2>
+        <div class="timeline">
+          <article>
+            <header>
+              <h3>Scientific Collaborator & Board Member · Euler Institute, USI</h3>
+              <p class="meta">2020 – Present · Lugano, Switzerland</p>
+            </header>
+            <ul>
+              <li>Lead research programs on multiphysics simulation and domain decomposition.</li>
+              <li>Direct development of scientific software and mentor interdisciplinary teams.</li>
+            </ul>
+          </article>
+          <article>
+            <header>
+              <h3>Postdoctoral Researcher · UniDistance Suisse</h3>
+              <p class="meta">2023 – Present</p>
+            </header>
+            <ul>
+              <li>Designing a new BSc Computer Science curriculum with emphasis on digital pedagogy.</li>
+            </ul>
+          </article>
+          <article>
+            <header>
+              <h3>Postdoctoral Researcher · Institute of Computational Science, USI</h3>
+              <p class="meta">2017 – 2020</p>
+            </header>
+            <ul>
+              <li>Developed methods and code for geophysical and biomedical simulations.</li>
+              <li>Advised PhD and MSc theses and supervised industry-focused internships.</li>
+            </ul>
+          </article>
+          <article>
+            <header>
+              <h3>Visiting Scientist · Lawrence Livermore National Laboratory</h3>
+              <p class="meta">2018 · Center for Applied Scientific Computing</p>
+            </header>
+            <ul>
+              <li>Expanded 4D adaptive mesh refinement strategies for space-time simulation codes.</li>
+            </ul>
+          </article>
+          <article>
+            <header>
+              <h3>Summer Intern · Lawrence Livermore National Laboratory</h3>
+              <p class="meta">2016 · Center for Applied Scientific Computing</p>
+            </header>
+            <ul>
+              <li>Implemented parallel field transfer routines for MFEM and evaluated AMG strategies.</li>
+            </ul>
+          </article>
+        </div>
+
+        <h3>Leadership & Service</h3>
+        <div class="timeline">
+          <article>
+            <header>
+              <h4>Chief Operations Officer, Substitute · Swiss Army</h4>
+              <p class="meta">2020</p>
+            </header>
+            <ul>
+              <li>Coordinated medical company deployments supporting hospitals during COVID-19 response.</li>
+            </ul>
+          </article>
+          <article>
+            <header>
+              <h4>Company Commander (XO) · Swiss Army</h4>
+              <p class="meta">2015 – 2018</p>
+            </header>
+            <ul>
+              <li>Planned annual training for a 130-soldier company and co-designed large-scale emergency drills.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted" id="education">
+      <div class="section__inner">
+        <h2>Education</h2>
+        <div class="timeline">
+          <article>
+            <header>
+              <h3>PhD in Computational Science · Università della Svizzera italiana</h3>
+              <p class="meta">2012 – 2017</p>
+            </header>
+            <ul>
+              <li>Dissertation on parallel variational transfer between unrelated meshes.</li>
+              <li>Explored geometry-aware finite elements and delivered lectures and labs.</li>
+              <li>Supervisor: Prof. Rolf Krause.</li>
+            </ul>
+          </article>
+          <article>
+            <header>
+              <h3>MSc in Computational Science · USI</h3>
+              <p class="meta">2010 – 2012 · <em>summa cum laude</em></p>
+            </header>
+          </article>
+          <article>
+            <header>
+              <h3>BSc in Informatics · USI</h3>
+              <p class="meta">2007 – 2010 · <em>magna cum laude</em></p>
+            </header>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section__inner">
+        <h2>Funded Projects & Initiatives</h2>
+        <div class="card-grid card-grid--two">
+          <article class="card">
+            <h3>XSES-FSI</h3>
+            <p class="meta">PASC Project · 2025 – 2028 · Principal Investigator at UniDistance Suisse</p>
+            <p>Advancing semi-structured discretizations for extreme-scale fluid-structure interaction simulations with partners E. Casartelli and L. Mangani.</p>
+          </article>
+          <article class="card">
+            <h3>Immersed Methods for FSCI</h3>
+            <p class="meta">SNF Project · 2024 – 2028 · Principal Investigator at USI</p>
+            <p>Co-leading research with HSLU on immersed methods that capture coupled fluid, structure, and contact dynamics in complex geometries.</p>
+          </article>
+          <article class="card">
+            <h3>FraNetG: Fracture Network Growth</h3>
+            <p class="meta">PASC Project · 2021 – 2024 · Co-Principal Investigator</p>
+            <p>Developing high-fidelity fracture network simulations with ETH Zürich collaborators to inform geothermal engineering decisions.</p>
+          </article>
+          <article class="card">
+            <h3>Supercomputing Development Programs</h3>
+            <p class="meta">CSCS Piz Daint · KAUST Shaheen III</p>
+            <p>Drove software readiness and performance portability through national supercomputing development allocations.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted" id="service">
+      <div class="section__inner">
+        <h2>Community & Mentoring</h2>
+        <div class="split">
+          <div>
+            <h3>Supervision</h3>
+            <ul>
+              <li>1 Postdoctoral researcher in Computational Science.</li>
+              <li>1 PhD dissertation in Computational Science.</li>
+              <li>6 MSc theses and 3 BSc theses in Informatics.</li>
+            </ul>
+            <h3>Responsibilities</h3>
+            <ul>
+              <li>Design research proposals and coordinate project execution.</li>
+              <li>Provide mentorship, teaching, and technical leadership across HPC initiatives.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Scientific Service</h3>
+            <ul>
+              <li>Peer reviewer for Journal of Computational Physics (2019–2023).</li>
+              <li>Reviewer for Water Resources Research (2021) and Engineering Analysis with Boundary Elements (2024).</li>
+              <li>Organizer for CMIS 2026 and minisymposia at SIAM CSE 2021, WCCM-APCOM 2022, IMG 2022/2025, and IACM Coupled Problems 2025.</li>
+              <li>Co-organizer of the 2021 FOMICS-DADSI seminar series on scientific learning.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section__inner">
+        <h2>Get in Touch</h2>
+        <p class="lead">I am open to collaborations, keynote invitations, and discussions on scalable multiphysics simulation.</p>
+        <div class="contact-cards">
+          <a class="contact-card" href="mailto:patrick.zulian@usi.ch">
+            <span>Email</span>
+            <strong>patrick.zulian@usi.ch</strong>
+          </a>
+          <a class="contact-card" href="https://www.linkedin.com/in/zulianp/" target="_blank" rel="noopener">
+            <span>LinkedIn</span>
+            <strong>linkedin.com/in/zulianp</strong>
+          </a>
+          <a class="contact-card" href="https://orcid.org/0000-0002-5822-3288" target="_blank" rel="noopener">
+            <span>ORCID</span>
+            <strong>0000-0002-5822-3288</strong>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Patrick Zulian. Built with care for GitHub Pages.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
