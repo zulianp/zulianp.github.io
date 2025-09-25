@@ -30,6 +30,10 @@ a:focus {
   overflow: hidden;
 }
 
+.hero--compact {
+  padding-bottom: 4rem;
+}
+
 .nav {
   max-width: 1100px;
   margin: 0 auto 4rem;
@@ -105,6 +109,7 @@ a:focus {
   font-weight: 600;
   border: none;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  gap: 0.5rem;
 }
 
 .button--ghost {
@@ -112,6 +117,39 @@ a:focus {
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.4);
   box-shadow: none;
+}
+
+.button--doc {
+  border-radius: 10px;
+  background: transparent;
+  color: #c7161d;
+  border: 1.5px solid #c7161d;
+  padding: 0.65rem 1.35rem;
+  box-shadow: none;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.button--doc:hover,
+.button--doc:focus {
+  background: rgba(199, 22, 29, 0.1);
+  text-decoration: none;
+}
+
+.button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.button__label {
+  display: inline-flex;
+  align-items: center;
 }
 
 .hero__meta {
@@ -265,6 +303,90 @@ a:focus {
   background: #0f1b33;
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.9rem;
+}
+
+.portfolio-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.portfolio-card {
+  display: flex;
+  gap: 2rem;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 24px 48px rgba(15, 27, 51, 0.08);
+  padding: 2.25rem;
+  align-items: stretch;
+}
+
+.portfolio-card__info {
+  flex: 1 1 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.portfolio-card__info h3 {
+  margin: 0;
+}
+
+.portfolio-card__info p {
+  margin: 0;
+}
+
+.portfolio-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.portfolio-card__links .button {
+  flex: 0 0 auto;
+  min-width: 150px;
+  justify-content: center;
+}
+
+.portfolio-card__media {
+  flex: 0 1 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 360px;
+}
+
+.portfolio-card__image {
+  width: 100%;
+  height: auto;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.portfolio-card__info,
+.portfolio-card__media {
+  min-width: 0;
+}
+
+@media (max-width: 960px) {
+  .portfolio-card {
+    flex-direction: column;
+    padding: 1.75rem;
+  }
+
+  .portfolio-card__media {
+    margin-top: 1.5rem;
+    max-width: none;
+  }
+
+  .portfolio-card__image {
+    width: 100%;
+    max-height: none;
+    border-radius: 14px;
+  }
 }
 
 @media (max-width: 720px) {
