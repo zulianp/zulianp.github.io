@@ -1,0 +1,30 @@
+title: "Research and development for computational application in geophysics"
+description:  "Applied geophysics research spanning subsurface flow, fracture mechanics, and uncertainty-aware reservoir modeling, highlighted by simulations of non-conforming fracture networks, large-scale phase-field fracture propagation, and jointing processes in sedimentary layers."
+images: 
+  - src: figures/flow.png
+    caption: "Subsurface flow using non conforming mesh methods"
+  - src: figures/rocks.png
+    caption: "Contact between rough rock surfaces"
+# TODO select images from the papers 
+paper: 
+  - url: "https://doi.org/10.1016/j.jcp.2021.110773"
+    status: "Accepted"
+    name: "Hybrid Fracture networks"
+  - url: "https://doi.org/10.1007/s42514-021-00069-6"
+    status: "Accepted"
+    name: "Fracture propagation"
+  - url: "https://doi.org/10.1002/nag.4006"
+    status: "Accepted"
+    name: "Sedimentary layers"
+  - url: "https://doi.org/10.1016/j.ijrmms.2020.104414"
+    status: "Accepted"
+    name: "Rock contact"
+  - url: "https://doi.org/10.1016/j.advwatres.2020.103759"
+    status: "Accepted"
+    name: "Benchmark"
+  - url: "https://doi.org/10.1007/s10543-025-01075-8" 
+    status: "Accepted"
+    name: "Conservation"
+  - url: "https://doi.org/10.1016/j.cageo.2019.06.014"
+    status: "Accepted"
+    name: "Nonconforming"

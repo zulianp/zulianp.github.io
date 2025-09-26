@@ -8,5 +8,5 @@ images:
     caption: "Left: volumetric resampling. Right: surface resampling."
 paper: 
   - status: "Accepted"
-  - url: "https://doi.org/10.1137/15M1008361"
+    url: "https://doi.org/10.1137/15M1008361"
 # video: "https://www.youtube.com/watch?v=YaES6TADbF4"

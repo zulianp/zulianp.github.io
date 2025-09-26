@@ -165,11 +165,7 @@ def render_card(data: Dict[str, Any]) -> str:
     images = data.get("images") or []
     gallery_html = render_gallery(images, entry_dir, title)
 
-    paper_items = data.get("paper") or []
-    status_info = first_dict_with_key(paper_items, "status")
-    status = status_info.get("status", "") if status_info else ""
-    paper_info = first_dict_with_key(paper_items, "url")
-    paper_url = paper_info.get("url") if paper_info else ""
+    paper_components = render_paper_components(data.get("paper") or [])
 
     video_info = data.get("video") or first_dict_with_key(data.get("videos") or [], "url")
     video_url = ""
@@ -178,15 +174,8 @@ def render_card(data: Dict[str, Any]) -> str:
     elif isinstance(video_info, str):
         video_url = video_info
 
-    paper_button = ""
-    status_badge = ""
-    if status.lower() == "accepted" and paper_url:
-        paper_button = render_paper_button(paper_url)
-    elif status:
-        status_badge = render_status_badge(status)
-
     video_button = render_video_button(video_url)
-    links_html = render_links([paper_button, status_badge, video_button])
+    links_html = render_links([*paper_components, video_button])
 
     card = CARD_TEMPLATE
     card = card.replace("{{TITLE}}", title)
@@ -201,6 +190,28 @@ def first_dict_with_key(items: Iterable[Dict[str, Any]], key: str) -> Dict[str, 
         if isinstance(item, dict) and key in item:
             return item
     return {}
+
+
+def render_paper_components(paper_items: Iterable[Dict[str, Any]]) -> List[str]:
+    components: List[str] = []
+    for item in paper_items:
+        if not isinstance(item, dict):
+            continue
+        status = item.get("status", "") or ""
+        url = item.get("url", "") or ""
+
+        label = item.get("name", "") or ""
+
+        if status and url and status.strip().lower() == "accepted":
+            components.append(render_paper_button(url, label))
+            continue
+
+        if url:
+            components.append(render_paper_button(url, label))
+
+        if status:
+            components.append(render_status_badge(status))
+    return components
 
 
 def format_description(text: str) -> str:
@@ -228,11 +239,13 @@ def split_paragraphs(text: str) -> Iterable[str]:
         yield " ".join(buffer)
 
 
-def render_paper_button(url: str) -> str:
+def render_paper_button(url: str, label: str = "") -> str:
     if not url:
         return ""
     escaped = html.escape(url)
-    return PAPER_BUTTON_TEMPLATE.replace("{{URL}}", escaped)
+    button = PAPER_BUTTON_TEMPLATE.replace("{{URL}}", escaped)
+    button_label = label.strip() or "Read Paper"
+    return button.replace("{{LABEL}}", html.escape(button_label))
 
 
 def render_video_button(url: str) -> str:
@@ -379,7 +392,7 @@ PAPER_BUTTON_TEMPLATE = """<a class=\"button button--doc\" href=\"{{URL}}\" targ
                       <text x=\"16\" y=\"25\" text-anchor=\"middle\" font-family=\"Inter, 'Segoe UI', sans-serif\" font-size=\"7\" font-weight=\"700\" fill=\"#ffffff\">PDF</text>
                     </svg>
                   </span>
-                  <span class=\"button__label\">Read Paper</span>
+                  <span class=\"button__label\">{{LABEL}}</span>
                 </a>"""
 
 

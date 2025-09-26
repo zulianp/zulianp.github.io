@@ -11,5 +11,14 @@ images:
   - src: figures/FSCI.png
     caption: "(A) Bio-prosthetic valve in the aortic root (cut for visualization). (B) Fluid domain. (D) Velocity profile imposed at the inlet of the fluid domain and pressure profile (E) computed at the outlet with the Windkessel model."
 paper: 
-  - status: "DD28 Proceeding (Accepted)"
-
+  - status: "FSCI (Accepted)"
+  - url: "https://doi.org/10.1093/europace/euaa398"
+    status: "Accepted"
+    name: "FSCI (Europace)"
+  - url: "https://doi.org/10.1016/j.jcp.2019.108884"
+    status: "Accepted"
+    name: "FSI"
+  - url: "https://pangea.stanford.edu/ERE/db/GeoConf/papers/SGW/2020/Hassanjanikhoshkroud.pdf"
+    status: "Accepted"
+    name: "Thermo-FSI"
+  

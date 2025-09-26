@@ -1,0 +1,15 @@
+title: Uncertainty quantification
+description: "Multilevel Monte Carlo methods for uncertainty quantification, hierarchical PDE samplers for generating spatially correlated random fields over general domains to assess model sensitivity and risk."
+images: 
+  - src: figures/MLMC.png
+    caption: "Hierarchical PDE sampler, overview of the workflow."
+  - src: figures/perm.png
+    caption: "Permeability field for the heterogeneous porous media."
+paper: 
+  - status: "Accepted"
+    url: "https://doi.org/10.1002/nla.2146"
+    name: "Hierarchical PDE sampler"
+  - status: "Accepted"
+    name: "Space-time MLMC"
+    url: "https://doi.org/10.1016/j.jcp.2021.110164"
+
