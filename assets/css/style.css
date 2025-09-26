@@ -126,8 +126,8 @@ a:focus {
 .button--doc {
   border-radius: 10px;
   background: transparent;
-  color: #c7161d;
-  border: 1.5px solid #c7161d;
+  color: #0f1b33;
+  border: 1.5px solid #0f1b33;
   padding: 0.65rem 1.35rem;
   box-shadow: none;
   font-weight: 600;
@@ -136,7 +136,7 @@ a:focus {
 
 .button--doc:hover,
 .button--doc:focus {
-  background: rgba(199, 22, 29, 0.1);
+  background: rgba(8, 91, 208, 0.1);
   text-decoration: none;
 }
 
@@ -511,7 +511,7 @@ a:focus {
   list-style: none;
   cursor: pointer;
   font-weight: 600;
-  color: #0f62fe;
+  color: #0f1b33;
   display: flex;
   align-items: center;
   gap: 0.6rem;
