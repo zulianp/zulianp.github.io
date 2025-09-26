@@ -467,7 +467,7 @@ a:focus {
 
 .portfolio-card__figure {
   margin: 0;
-  background: #f7f8fa;
+  /* background: #f7f8fa; */
   border: 1px solid #e0e5ee;
   border-radius: 16px;
   padding: 0.9rem;
