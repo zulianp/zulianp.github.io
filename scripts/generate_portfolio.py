@@ -358,7 +358,7 @@ FIGURE_CAPTION_TEMPLATE = """                <figcaption>{{TEXT}}</figcaption>""
 
 
 DESCRIPTION_TEMPLATE = """            <details class=\"portfolio-card__details\">
-              <summary class=\"portfolio-card__summary\">Project overview</summary>
+              <summary class=\"portfolio-card__summary\">Description</summary>
               <div class=\"portfolio-card__description\">
 {{CONTENT}}
               </div>
