@@ -467,19 +467,24 @@ a:focus {
 
 .portfolio-card__figure {
   margin: 0;
-  /* background: #f7f8fa; */
+  background: #ffffff;
   border: 1px solid #e0e5ee;
   border-radius: 16px;
   padding: 0.9rem;
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
+  background: linear-gradient(180deg, rgba(247, 248, 250, 0.7), rgba(234, 239, 247, 0.7));
 }
 
 .portfolio-card__figure img {
   width: 100%;
-  border-radius: 12px;
   display: block;
+  border-radius: 12px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #ffffff;
+  /* background-color: #f7f8fa; */
 }
 
 .portfolio-card__figure figcaption {

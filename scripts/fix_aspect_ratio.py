@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
-"""Pad portfolio thumbnails with transparency to unify their aspect ratio."""
+"""Trim whitespace and pad portfolio thumbnails to a uniform aspect ratio."""
 
 from __future__ import annotations
 
+import math
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Iterable, List
 
 try:
-    from PIL import Image
+    from PIL import Image, ImageChops
 except ModuleNotFoundError as exc:  # pragma: no cover - dependency missing
     raise SystemExit("Pillow is required: pip install Pillow") from exc
 
@@ -17,6 +18,7 @@ except ModuleNotFoundError as exc:  # pragma: no cover - dependency missing
 ROOT = Path(__file__).resolve().parent.parent
 PORTFOLIO_HTML = ROOT / "portfolio.html"
 SUPPORTED_SUFFIXES = {".png", ".webp"}
+TARGET_ASPECT = 16 / 9
 
 
 class _ImageCollector(HTMLParser):
@@ -57,15 +59,58 @@ def _iter_local_image_paths(html_file: Path) -> Iterable[Path]:
         yield path
 
 
-def _pad_to_square(image_path: Path) -> bool:
+def _crop_whitespace(image: Image.Image) -> tuple[Image.Image, bool]:
+    """Remove surrounding transparent or near-white padding."""
+
+    # Ensure RGBA for consistent alpha handling.
+    rgba = image.convert("RGBA")
+    width, height = rgba.size
+
+    # First attempt: rely on alpha channel when present.
+    alpha = rgba.getchannel("A")
+    bbox = alpha.getbbox()
+    if bbox and bbox != (0, 0, width, height):
+        return rgba.crop(bbox), True
+
+    # Fallback: detect light borders in opaque images by comparing against white.
+    rgb = rgba.convert("RGB")
+    background = Image.new("RGB", rgb.size, (255, 255, 255))
+    diff = ImageChops.difference(rgb, background)
+    # Amplify differences so subtle edges are detected.
+    diff = ImageChops.add(diff, diff, 2.0, -100)
+    bbox = diff.getbbox()
+    if bbox and bbox != (0, 0, width, height):
+        return rgba.crop(bbox), True
+
+    return rgba, False
+
+
+def _pad_to_ratio(image_path: Path) -> bool:
     with Image.open(image_path) as image:
-        width, height = image.size
-        if width == height:
+        cropped, did_crop = _crop_whitespace(image)
+        width, height = cropped.size
+        if width == 0 or height == 0:
             return False
-        target = max(width, height)
-        padded = Image.new("RGBA", (target, target), (0, 0, 0, 0))
-        offset = ((target - width) // 2, (target - height) // 2)
-        padded.paste(image.convert("RGBA"), offset)
+
+        current_ratio = width / height
+        if math.isclose(current_ratio, TARGET_ASPECT, rel_tol=1e-2, abs_tol=1e-2):
+            if did_crop:
+                cropped.save(image_path)
+                return True
+            return False
+
+        if current_ratio > TARGET_ASPECT:
+            # Image is wider than target ratio: extend height.
+            new_height = int(round(width / TARGET_ASPECT))
+            new_width = width
+        else:
+            # Image is taller/narrower than target ratio: extend width.
+            new_width = int(round(height * TARGET_ASPECT))
+            new_height = height
+
+        padded = Image.new("RGBA", (new_width, new_height), (0, 0, 0, 0))
+        offset = ((new_width - width) // 2, (new_height - height) // 2)
+        padded.paste(cropped, offset, cropped)
         padded.save(image_path)
     return True
 
@@ -78,7 +123,7 @@ def main() -> int:
 
     processed = 0
     for image_path in _iter_local_image_paths(html_file):
-        if _pad_to_square(image_path):
+        if _pad_to_ratio(image_path):
             processed += 1
             print(f"padded {image_path.relative_to(ROOT)}")
 
