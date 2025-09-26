@@ -1,0 +1,23 @@
+title: Scalable matrix-free solver for 3D transfer of polarized
+radiation in stellar atmospheres
+description: "We present an eﬃcient and massively parallel solution strategy for the transfer problem of
+polarized radiation, for a 3D stationary medium out of local thermodynamic equilibrium.
+Scattering processes are included accounting for partial frequency redistribution effects.
+Such a setting is one of the most challenging ones in radiative transfer modeling. The
+problem is formulated for a two-level atomic model, which allows linearization. The
+discrete ordinate method alongside an exponential integrator are used for discretization.
+Eﬃcient solution is obtained with a Krylov method equipped with a tailored physics-based
+preconditioner. A matrix-free approach results in a lightweight implementation, suited
+for tackling large problems. Near-optimal strong and weak scalability are obtained with
+two complementary decompositions of the computational domain. The presented approach
+made it possible to perform simulations for the Ca i line at 4227Å with more than 109
+degrees of freedom in less than half an hour on massively parallel machines, always
+converging in a few iterations for the proposed tests."
+images: 
+  - src: figures/decomp.png
+    caption: "Decomposition of primary and auxiliary grids"
+  - src: figures/strongscaling.png
+    caption: "Strong scaling and eﬃciency plots of the radiative transfer code"
+paper: 
+  - status: "Accepted"
+  - url: "https://doi.org/10.1016/j.jcp.2023.112013"

@@ -114,6 +114,38 @@
             </div>
           </article>
           <article class="portfolio-card">
+            <h3>Scalable matrix-free solver for 3D transfer of polarized</h3>
+            <div class="portfolio-card__gallery">
+              <figure class="portfolio-card__figure">
+                <img src="portfolio/20230615_trip/figures/decomp.png" alt="Decomposition of primary and auxiliary grids">
+                <figcaption>Decomposition of primary and auxiliary grids</figcaption>
+              </figure>
+              <figure class="portfolio-card__figure">
+                <img src="portfolio/20230615_trip/figures/strongscaling.png" alt="Strong scaling and eﬃciency plots of the radiative transfer code">
+                <figcaption>Strong scaling and eﬃciency plots of the radiative transfer code</figcaption>
+              </figure>
+            </div>
+            <details class="portfolio-card__details">
+              <summary class="portfolio-card__summary">Description</summary>
+              <div class="portfolio-card__description">
+<p>We present an eﬃcient and massively parallel solution strategy for the transfer problem of polarized radiation, for a 3D stationary medium out of local thermodynamic equilibrium. Scattering processes are included accounting for partial frequency redistribution effects. Such a setting is one of the most challenging ones in radiative transfer modeling. The problem is formulated for a two-level atomic model, which allows linearization. The discrete ordinate method alongside an exponential integrator are used for discretization. Eﬃcient solution is obtained with a Krylov method equipped with a tailored physics-based preconditioner. A matrix-free approach results in a lightweight implementation, suited for tackling large problems. Near-optimal strong and weak scalability are obtained with two complementary decompositions of the computational domain. The presented approach made it possible to perform simulations for the Ca i line at 4227Å with more than 109 degrees of freedom in less than half an hour on massively parallel machines, always converging in a few iterations for the proposed tests.</p>
+              </div>
+            </details>
+            <div class="portfolio-card__links">
+<a class="button button--doc" href="https://doi.org/10.1016/j.jcp.2023.112013" target="_blank" rel="noopener">
+                  <span class="button__icon" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" role="img" focusable="false">
+                      <path d="M9 3h11l7 7v15a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                      <path d="M20 3v8h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                      <rect x="9" y="19" width="14" height="8" rx="1.6" fill="currentColor"/>
+                      <text x="16" y="25" text-anchor="middle" font-family="Inter, 'Segoe UI', sans-serif" font-size="7" font-weight="700" fill="#ffffff">PDF</text>
+                    </svg>
+                  </span>
+                  <span class="button__label">Read Paper</span>
+                </a>
+            </div>
+          </article>
+          <article class="portfolio-card">
             <h3>A Parallel Approach to the Variational Transfer of Discrete Fields between Arbitrarily Distributed Unstructured Finite Element Meshes</h3>
             <div class="portfolio-card__gallery">
               <figure class="portfolio-card__figure">
