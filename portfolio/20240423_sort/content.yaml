@@ -14,7 +14,7 @@ compliant to the MPI programming model. By supporting the most popular elementar
 fixed-size value types, the library can be straightforwardly integrated into third-party MPI-based software."
 images: 
   - src: figures/Throughput.png
-    caption: ""
+    caption: "Comparision between MPI_Sort (ours) and other parallel sorting algorithms"
   - src: figures/Throughput_2.png
     caption: "Throughput of parallel sorting [GB/s]"
 paper: 
