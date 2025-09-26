@@ -1,5 +1,4 @@
-title: Scalable matrix-free solver for 3D transfer of polarized
-radiation in stellar atmospheres
+title: "Scalable matrix-free solver for 3D transfer of polarized radiation in stellar atmospheres"
 description: "We present an eﬃcient and massively parallel solution strategy for the transfer problem of
 polarized radiation, for a 3D stationary medium out of local thermodynamic equilibrium.
 Scattering processes are included accounting for partial frequency redistribution effects.

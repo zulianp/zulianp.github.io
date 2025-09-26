@@ -11,7 +11,7 @@ images:
   - src: figures/StentDesign.png
     caption: "Idealized stent (rigid). 1D beam to extruded surface using signed-distance fields."
   - src: figures/StentExample.png
-    caption: "Contact between elastic structure and rigid stent simulated on an Apple M1 Max. Mesh: 87808000 elements and 89439840 nodes."
+    caption: "Contact between elastic structure and rigid stent computed with an Apple M1 Max Laptop. Mesh: 87808000 elements and 89439840 nodes."
 paper: 
   - status: "Article in preparation"
   - url: "https://arxiv.org/abs/2401.12345"
