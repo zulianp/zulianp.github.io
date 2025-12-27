@@ -20,3 +20,4 @@ images:
 paper: 
   - status: "Accepted"
   - url: "https://doi.org/10.1016/j.jcp.2023.112013"
+  - name: "TRIP"
