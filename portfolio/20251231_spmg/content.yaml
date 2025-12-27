@@ -13,6 +13,8 @@ images:
   - src: figures/StentExample.png
     caption: "Contact between elastic structure and rigid stent computed with an Apple M1 Max Laptop. Mesh: 87808000 elements and 89439840 nodes."
 paper: 
-  - status: "Article in preparation"
+  - url: "https://dx.doi.org/10.2139/ssrn.5960259"
+    status: "Article in review"
+    name: "SPMG (preprint)"
 
 # video: "https://www.youtube.com/watch?v=I7pQfwQwjx0"

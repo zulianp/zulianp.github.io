@@ -19,5 +19,5 @@ images:
     caption: "Strong scaling and eﬃciency plots of the radiative transfer code"
 paper: 
   - status: "Accepted"
-  - url: "https://doi.org/10.1016/j.jcp.2023.112013"
-  - name: "TRIP"
+    url: "https://doi.org/10.1016/j.jcp.2023.112013"
+    name: "TRIP"

@@ -18,5 +18,5 @@ images:
   - src: figures/Throughput_2.png
     caption: "Throughput of parallel sorting [GB/s]"
 paper: 
-  - status: "Accepted"
   - url: "https://doi.org/10.1016/j.jpdc.2023.104833"
+    status: "Accepted"
