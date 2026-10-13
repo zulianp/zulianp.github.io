@@ -197,20 +197,15 @@ def render_paper_components(paper_items: Iterable[Dict[str, Any]]) -> List[str]:
     for item in paper_items:
         if not isinstance(item, dict):
             continue
-        status = item.get("status", "") or ""
         url = item.get("url", "") or ""
-
         label = item.get("name", "") or ""
-
-        if status and url and status.strip().lower() == "accepted":
-            components.append(render_paper_button(url, label))
-            continue
-
+        status = (item.get("status", "") or "").strip()
+        if status.lower() == "accepted":
+            status = ""
         if url:
-            components.append(render_paper_button(url, label))
-
-        if status:
-            components.append(render_status_badge(status))
+            components.append(render_paper_button(url, label, status))
+        elif status:
+            components.append(f"              <li>{render_status_badge(status)}</li>")
     return components
 
 
@@ -239,13 +234,12 @@ def split_paragraphs(text: str) -> Iterable[str]:
         yield " ".join(buffer)
 
 
-def render_paper_button(url: str, label: str = "") -> str:
+def render_paper_button(url: str, label: str = "", status: str = "") -> str:
     if not url:
         return ""
-    escaped = html.escape(url)
-    button = PAPER_BUTTON_TEMPLATE.replace("{{URL}}", escaped)
-    button_label = label.strip() or "Read Paper"
-    return button.replace("{{LABEL}}", html.escape(button_label))
+    button = PAPER_BUTTON_TEMPLATE.replace("{{URL}}", html.escape(url))
+    button = button.replace("{{LABEL}}", html.escape(label.strip() or "Article"))
+    return button.replace("{{STATUS}}", render_status_badge(status) if status else "")
 
 
 def render_video_button(url: str) -> str:
@@ -306,19 +300,18 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     <nav class=\"nav\">
       <a class=\"nav__brand\" href=\"index.html#top\">Patrick Zulian</a>
       <div class=\"nav__links\">
-        <a href=\"index.html#about\">About</a>
         <a href=\"index.html#research\">Research</a>
+        <a href=\"index.html#software\">Software</a>
         <a href=\"index.html#experience\">Experience</a>
-        <a href=\"index.html#projects\">Projects</a>
-        <a href=\"index.html#service\">Service</a>
+        <a href=\"index.html#funding\">Funding</a>
+        <a href=\"index.html#service\">Teaching &amp; Service</a>
         <a href=\"portfolio.html\" aria-current=\"page\">Portfolio</a>
       </div>
     </nav>
     <div class=\"hero__content\">
-      <p class=\"hero__eyebrow\">Scientific work</p>
-      <!--<h1>Portfolio</h1>-->
+      <h1>Portfolio</h1>
       <p class=\"hero__lede\">
-        Projects, articles, and open-source software.
+        Selected projects with the related articles.
       </p>
     </div>
   </header>
@@ -326,7 +319,6 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   <main>
     <section class=\"section\" id=\"portfolio\">
       <div class=\"section__inner\">
-       <!--<h2>Featured Work</h2>-->
         <div class=\"portfolio-grid\">
 {{CARDS}}
         </div>
@@ -350,9 +342,9 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 
 CARD_TEMPLATE = """          <article class=\"portfolio-card\">
             <h3>{{TITLE}}</h3>
+{{LINKS}}
 {{GALLERY}}
 {{DESCRIPTION}}
-{{LINKS}}
           </article>"""
 
 
@@ -378,30 +370,20 @@ DESCRIPTION_TEMPLATE = """            <details class=\"portfolio-card__details\"
             </details>"""
 
 
-LINKS_TEMPLATE = """            <div class=\"portfolio-card__links\">
+LINKS_TEMPLATE = """            <ul class=\"portfolio-card__links\">
 {{ITEMS}}
-            </div>"""
+            </ul>"""
 
 
-PAPER_BUTTON_TEMPLATE = """<a class=\"button button--doc\" href=\"{{URL}}\" target=\"_blank\" rel=\"noopener\">
-                  <span class=\"button__icon\" aria-hidden=\"true\">
-                    <svg viewBox=\"0 0 32 32\" role=\"img\" focusable=\"false\">
-                      <path d=\"M9 3h11l7 7v15a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"round\"/>
-                      <path d=\"M20 3v8h7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"round\"/>
-                      <rect x=\"9\" y=\"19\" width=\"14\" height=\"8\" rx=\"1.6\" fill=\"currentColor\"/>
-                      <text x=\"16\" y=\"25\" text-anchor=\"middle\" font-family=\"Inter, 'Segoe UI', sans-serif\" font-size=\"7\" font-weight=\"700\" fill=\"#ffffff\">PDF</text>
-                    </svg>
-                  </span>
-                  <span class=\"button__label\">{{LABEL}}</span>
-                </a>"""
+PAPER_BUTTON_TEMPLATE = """              <li><a class=\"doc-link\" href=\"{{URL}}\" target=\"_blank\" rel=\"noopener\">
+                <svg class=\"doc-link__icon\" viewBox=\"0 0 16 16\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4 1.5h5.5L13 5v8.5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-11a1 1 0 0 1 1-1z M9.5 1.5V5H13 M5.5 8.5h5 M5.5 11h5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-linejoin=\"round\"/></svg>{{LABEL}}{{STATUS}}</a></li>"""
 
 
-VIDEO_BUTTON_TEMPLATE = """<a class=\"button button--video\" href=\"{{URL}}\" target=\"_blank\" rel=\"noopener\">
-                  <span class=\"button__label\">Watch Video</span>
-                </a>"""
+VIDEO_BUTTON_TEMPLATE = """              <li><a class=\"doc-link\" href=\"{{URL}}\" target=\"_blank\" rel=\"noopener\">
+                <svg class=\"doc-link__icon\" viewBox=\"0 0 16 16\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5.5 4v8l6-4z\" fill=\"currentColor\"/></svg>Video</a></li>"""
 
 
-STATUS_BADGE_TEMPLATE = """<span class=\"badge badge--status\">{{STATUS}}</span>"""
+STATUS_BADGE_TEMPLATE = """<span class=\"doc-link__status\">{{STATUS}}</span>"""
 
 
 def main() -> None:
